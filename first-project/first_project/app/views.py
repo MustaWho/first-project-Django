@@ -1,10 +1,10 @@
+import os
 from os import listdir
 
 from django.http import HttpResponse
 from django.shortcuts import render, reverse
 from django.utils import timezone
 import datetime
-
 
 def home_view(request):
     template_name = 'app/home.html'
@@ -33,5 +33,5 @@ def time_view(request):
 
 
 def workdir_view(request):
-    workdir = listdir('C:/Users/User/PycharmProjects/Netology/dj-homeworks/first-project/first_project')
-    raise workdir
+    workdir = os.listdir()
+    return HttpResponse(f'{workdir}')
